@@ -4,3 +4,7 @@ dataset/
 *.engine
 *.onnx
 *.pdf
+README/
+dataset.zip
+file_list.txt
+*.Identifier
