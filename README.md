@@ -1,6 +1,13 @@
 
 # YOLOv11n 从训练到加速推理
 
+## 下载资源
+
+由于 GitHub 对上传文件大小有限制（最大 25MB），我们已将完整数据集与 PDF 文档上传至第三方网盘：
+
+- [点击下载数据集与项目说明 PDF（百度网盘）](https://pan.baidu.com/s/1PijQkblMQoBoyuQ-LV-KCA) 
+- 提取码: 0828
+
 ## 1. 环境配置
 
 本教程将指导您在 **Ubuntu 20.04** 系统上配置适用于 YOLOv11n 模型训练与推理的完整开发环境，包括 **Conda环境、PyTorch、CUDA、cuDNN** 及 **TensorRT** 的安装与验证。
