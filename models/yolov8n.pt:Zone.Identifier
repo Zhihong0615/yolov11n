@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://developer.aliyun.com/redirect?target=https%3A%2F%2Fgithub.com%2Fultralytics%2Fassets%2Freleases%2Fdownload%2Fv0.0.0%2Fyolov8n.pt
+HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/521807533/732c503e-9fcb-4a82-be7f-106baafbda15?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250423T165835Z&X-Amz-Expires=300&X-Amz-Signature=21800260f25ae0fd4e79b6207b930fe45c30e6cd8e690f486a737c04fda268f3&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dyolov8n.pt&response-content-type=application%2Foctet-stream
