@@ -36,7 +36,7 @@ Ubuntu 是一款基于 Debian 的开源 Linux 操作系统，广泛应用于服�
 ubuntu 20.04
 ```
 
-![alt text](README_images/image-5.png)
+![image-5](README_images/image-5.png)
 
 3. 找到官方的 Ubuntu 20.04 LTS，点进去。
 
@@ -74,7 +74,7 @@ ubuntu 20.04
 
 将会展示您当前可用的 WSL 版本（标*号代表默认版本，如需指定进入某一 WSL 环境，可使用指令 `wsl -d ubuntu-xx.xx`）：
 
-![alt text](README_images/image-7.png)
+![image-7](README_images/image-7.png)
 
 2. 设置默认版本为 WSL2：
 
@@ -352,7 +352,7 @@ pip install opencv-python numpy
 
 > 找到如下所示界面即可，选择Linux x86_64 的本地安装程序 (Tar)
 
-![alt text](README_images/image.png)
+![image](README_images/image.png)
 
 下载完成后，获得类似以下文件：
 
@@ -434,7 +434,7 @@ TensorRT-8.6.1.6/python/tensorrt/__init__.py
 ...
 ```
 
-![alt text](README_images/image-3.png)
+![image-3](README_images/image-3.png)
 
 解压完成后，切换到 TensorRT 的 python 目录：
 
@@ -456,7 +456,7 @@ python -c "import tensorrt as trt; print(trt.__version__)"
 
 > 输出 TensorRT 版本号即表示安装成功。
 
-![alt text](README_images/image-4.png)
+![image-4](README_images/image-4.png)
 
 ---
 
@@ -477,7 +477,7 @@ python -c "import numpy; print(numpy.__version__)"
 python -c "import cv2; print(cv2.__version__)"
 ```
 
-![alt text](README_images/image-6.png)
+![image-6](README_images/image-6.png)
 
 > 需要提醒的是，由于上述内容部分参考了个人实践经验、ChatGPT 协助以及官方文档示例，实际操作过程中可能因系统环境差异、版本更新等原因出现小幅偏差。即便严格按照本教程执行，首次搭建时也可能遇到问题。
 
@@ -501,7 +501,7 @@ VS Code 提供了丰富的插件生态，能够大大提高本项目的开发效
 
 > 安装 WSL 插件之后，您将会在左下角看见蓝色图标，之后在上方选择 `Connect to WSL Using...` 之后即可选择您需要的版本（Ubuntu-20.04）:
 
-![alt text](README_images/image-8.png)
+![image-8](README_images/image-8.png)
 
 ---
 
@@ -803,7 +803,7 @@ nc: 6
 
 训练完成后，会输出各项指标：
 
-![alt text](README_images/image-9.png)
+![image-9](README_images/image-9.png)
 
 同时在输出目录下（如 `output_directory/road_obstacle_yolov11/`）  
 将自动生成如下文件和子文件夹：
@@ -1000,7 +1000,7 @@ model.export(format='onnx', imgsz=(384, 640))
 
 导出的时候可能会出现如下错误：
 
-![alt text](README_images/image-10.png)
+![image-10](README_images/image-10.png)
 
 解决办法：安装以下工具集：
 
@@ -1010,7 +1010,7 @@ pip install onnx onnxruntime onnxsim netron
 
 导出成功会出现如下信息，警告可忽略，因为我们只是为了导出推理模型，将不会使用val验证：
 
-![alt text](README_images/image-11.png)
+![image-11](README_images/image-11.png)
 
 
 ---
@@ -1262,8 +1262,8 @@ cv2.putText(frame, ...)
 
 运行成功后，将在窗口中实时展示推理结果，并在指定路径保存带检测框的视频：
 
-![alt text](README_images/image-12.png)
+![image-12](README_images/image-12.png)
 
-![alt text](README_images/image-13.png)
+![image-13](README_images/image-13.png)
 
 ---
