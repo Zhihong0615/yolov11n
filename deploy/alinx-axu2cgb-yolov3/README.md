@@ -75,3 +75,9 @@ YOLO_SHOW=1 YOLO_SAVE=1 YOLO_MAX_IMAGES=10 python3 -u tf_yolov3_voc_pic_optimize
 
 本目录只包含可复现工程、模型运行库、xclbin 备份和测试样例；本机 SSH 私钥、串口
 脚本、临时网络配置、SD 卡救援镜像和缓存文件均未提交。
+
+## License
+
+本仓库中由项目作者编写的源代码采用 MIT License。AXU2CGB 平台文件、DPU 运行时、
+生成的模型库、xclbin 以及测试数据可能包含厂商或其他上游内容，使用时仍需遵循其
+各自的许可和分发条件。
