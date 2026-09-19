@@ -1274,3 +1274,13 @@ cv2.putText(frame, ...)
 ![image-13](README_images/image-13.png)
 
 ---
+
+## 5. ALINX AXU2CGB/DPU 板端延续工程
+
+本项目的板端延续工程位于
+[`deploy/alinx-axu2cgb-yolov3/`](deploy/alinx-axu2cgb-yolov3/)。它记录了从本软件版
+项目延伸到 ALINX AXU2CGB、DNNDK/DPU YOLOv3 office 检测的完整复现结果，包括原始
+脚本、CPU/DPU 流水线优化、当前 xclbin 备份和性能数据。
+
+当前板端模型是 YOLOv3，并不等同于根目录的 YOLOv11n；在 AXU2CGB 上部署 YOLOv11n
+还需要单独完成量化、算子兼容性检查和 Vitis AI 编译。

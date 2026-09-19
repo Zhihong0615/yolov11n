@@ -8,3 +8,11 @@ README/
 dataset.zip
 file_list.txt
 *.Identifier
+
+# Local development artifacts and credentials
+__pycache__/
+*.py[cod]
+*.log
+board_rsa*
+*.pem
+*.key
