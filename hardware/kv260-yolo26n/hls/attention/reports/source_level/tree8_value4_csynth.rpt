@@ -1,0 +1,447 @@
+
+
+================================================================
+== Synthesis Summary Report of 'psa_attention_cached_tree8_value4'
+================================================================
++ General Information: 
+    * Date:           Thu Oct  8 15:53:26 2026
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        build_tree8_value4
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------------------------------------------------------+--------+-------+----------+-----------+----------+----------+-------+----------+---------+---------+------------+-------------+----------+
+    |                                         Modules                                        |  Issue |       | Latency  |  Latency  | Iteration|          |  Trip |          |         |         |            |             |          |
+    |                                         & Loops                                        |  Type  | Slack | (cycles) |    (ns)   |  Latency | Interval | Count | Pipelined|  BRAM   |   DSP   |     FF     |     LUT     |   URAM   |
+    +----------------------------------------------------------------------------------------+--------+-------+----------+-----------+----------+----------+-------+----------+---------+---------+------------+-------------+----------+
+    |+ psa_attention_cached_tree8_value4                                                     |  Timing|  -0.37|  26307073|  1.315e+08|         -|  26307074|      -|        no|  26 (9%)|  98 (7%)|  21527 (9%)|  19017 (16%)|  16 (25%)|
+    | o VITIS_LOOP_46_1                                                                      |       -|   3.65|  26307064|  1.315e+08|  13153532|         -|      2|        no|        -|        -|           -|            -|         -|
+    |  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_47_2_VITIS_LOOP_48_3          |       -|   0.00|     12804|  6.402e+04|         -|     12804|      -|        no|        -|  1 (~0%)|   153 (~0%)|    219 (~0%)|         -|
+    |   o VITIS_LOOP_47_2_VITIS_LOOP_48_3                                                    |       -|   3.65|     12802|  6.401e+04|         4|         1|  12800|       yes|        -|        -|           -|            -|         -|
+    |  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_54_4_VITIS_LOOP_55_5          |       -|   0.00|     25604|  1.280e+05|         -|     25604|      -|        no|        -|  1 (~0%)|   154 (~0%)|    223 (~0%)|         -|
+    |   o VITIS_LOOP_54_4_VITIS_LOOP_55_5                                                    |       -|   3.65|     25602|  1.280e+05|         4|         1|  25600|       yes|        -|        -|           -|            -|         -|
+    |  o VITIS_LOOP_62_6                                                                     |       -|   3.65|  13127925|  6.564e+07|    525117|         -|     25|        no|        -|        -|           -|            -|         -|
+    |   + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_148_23_VITIS_LOOP_149_24     |       -|   0.00|      1048|  5.240e+03|         -|      1048|      -|        no|        -|  1 (~0%)|   455 (~0%)|    434 (~0%)|         -|
+    |    o VITIS_LOOP_148_23_VITIS_LOOP_149_24                                               |       -|   3.65|      1046|  5.230e+03|        24|         1|   1024|       yes|        -|        -|           -|            -|         -|
+    |   o VITIS_LOOP_64_7                                                                    |       -|   3.65|      1088|  5.440e+03|        68|         -|     16|        no|        -|        -|           -|            -|         -|
+    |    + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_67_8                        |       -|   0.00|        35|    175.000|         -|        35|      -|        no|        -|        -|    54 (~0%)|     76 (~0%)|         -|
+    |     o VITIS_LOOP_67_8                                                                  |       -|   3.65|        33|    165.000|         3|         1|     32|       yes|        -|        -|           -|            -|         -|
+    |    + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_73_9                        |       -|   1.21|        66|    330.000|         -|        66|      -|        no|        -|        -|     9 (~0%)|     56 (~0%)|         -|
+    |     o VITIS_LOOP_73_9                                                                  |       -|   3.65|        64|    320.000|         1|         1|     64|       yes|        -|        -|           -|            -|         -|
+    |   o VITIS_LOOP_79_10                                                                   |       -|   3.65|    522977|  2.615e+06|     74711|         -|      7|        no|        -|        -|           -|            -|         -|
+    |    + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_81_11_VITIS_LOOP_82_12_VIT  |       -|   0.02|      4148|  2.074e+04|         -|      4148|      -|        no|        -|  62 (4%)|  12650 (5%)|    8528 (7%)|         -|
+    |     o VITIS_LOOP_81_11_VITIS_LOOP_82_12_VITIS_LOOP_93_13                               |       -|   3.65|      4146|  2.073e+04|        52|         1|   4096|       yes|        -|        -|           -|            -|         -|
+    |    o VITIS_LOOP_119_18                                                                 |       -|   3.65|     70560|  3.528e+05|      4410|         -|     16|        no|        -|        -|           -|            -|         -|
+    |     + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_121_19                     |  Timing|  -0.37|        67|    335.000|         -|        67|      -|        no|        -|        -|   111 (~0%)|    266 (~0%)|         -|
+    |      o VITIS_LOOP_121_19                                                               |       -|   3.65|        65|    325.000|         3|         1|     64|       yes|        -|        -|           -|            -|         -|
+    |     + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_132_20                     |       -|   0.47|        24|    120.000|         -|        24|      -|        no|        -|        -|   566 (~0%)|    180 (~0%)|         -|
+    |      o VITIS_LOOP_132_20                                                               |       -|   3.65|        22|    110.000|         8|         1|     16|       yes|        -|        -|           -|            -|         -|
+    |     o VITIS_LOOP_136_21                                                                |       -|   3.65|      4288|  2.144e+04|        67|         -|     64|        no|        -|        -|           -|            -|         -|
+    |      + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_140_22                    |       -|   0.20|        35|    175.000|         -|        35|      -|        no|        -|  1 (~0%)|   921 (~0%)|    212 (~0%)|         -|
+    |       o VITIS_LOOP_140_22                                                              |       -|   3.65|        33|    165.000|        19|         1|     16|       yes|        -|        -|           -|            -|         -|
+    +----------------------------------------------------------------------------------------+--------+-------+----------+-----------+----------+----------+-------+----------+---------+---------+------------+-------------+----------+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface    | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|              |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem_k | READ_ONLY  | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 64           | 16           | 16          | 16          | BRAM=2            |
+| m_axi_gmem_o | WRITE_ONLY | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
+| m_axi_gmem_q | READ_ONLY  | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 32           | 16           | 16          | 16          | BRAM=2            |
+| m_axi_gmem_v | READ_ONLY  | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 64           | 16           | 16          | 16          | BRAM=2            |
++--------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | q_1        | 0x10   | 32    | W      | Data signal of q                 |                                                                      |
+| s_axi_control | q_2        | 0x14   | 32    | W      | Data signal of q                 |                                                                      |
+| s_axi_control | k_1        | 0x1c   | 32    | W      | Data signal of k                 |                                                                      |
+| s_axi_control | k_2        | 0x20   | 32    | W      | Data signal of k                 |                                                                      |
+| s_axi_control | v_1        | 0x28   | 32    | W      | Data signal of v                 |                                                                      |
+| s_axi_control | v_2        | 0x2c   | 32    | W      | Data signal of v                 |                                                                      |
+| s_axi_control | output_r_1 | 0x34   | 32    | W      | Data signal of output_r          |                                                                      |
+| s_axi_control | output_r_2 | 0x38   | 32    | W      | Data signal of output_r          |                                                                      |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------+
+| Argument | Direction | Datatype      |
++----------+-----------+---------------+
+| q        | in        | float const * |
+| k        | in        | float const * |
+| v        | in        | float const * |
+| output   | out       | float*        |
++----------+-----------+---------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+--------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                              |
++----------+---------------+-----------+----------+--------------------------------------+
+| q        | m_axi_gmem_q  | interface |          | channel=0                            |
+| q        | s_axi_control | register  | offset   | name=q_1 offset=0x10 range=32        |
+| q        | s_axi_control | register  | offset   | name=q_2 offset=0x14 range=32        |
+| k        | m_axi_gmem_k  | interface |          | channel=0                            |
+| k        | s_axi_control | register  | offset   | name=k_1 offset=0x1c range=32        |
+| k        | s_axi_control | register  | offset   | name=k_2 offset=0x20 range=32        |
+| v        | m_axi_gmem_v  | interface |          | channel=0                            |
+| v        | s_axi_control | register  | offset   | name=v_1 offset=0x28 range=32        |
+| v        | s_axi_control | register  | offset   | name=v_2 offset=0x2c range=32        |
+| output   | m_axi_gmem_o  | interface |          | channel=0                            |
+| output   | s_axi_control | register  | offset   | name=output_r_1 offset=0x34 range=32 |
+| output   | s_axi_control | register  | offset   | name=output_r_2 offset=0x38 range=32 |
++----------+---------------+-----------+----------+--------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+-------------------+------------------------------------------+
+| HW Interface | Direction | Length | Width | Loop              | Loop Location                            |
++--------------+-----------+--------+-------+-------------------+------------------------------------------+
+| m_axi_gmem_k | read      | 25600  | 32    | VITIS_LOOP_46_1   | attention_cached_tree8_value4.cpp:46:19  |
+| m_axi_gmem_o | write     | 16     | 32    | VITIS_LOOP_149_24 | attention_cached_tree8_value4.cpp:149:28 |
+| m_axi_gmem_q | read      | 25600  | 32    | VITIS_LOOP_46_1   | attention_cached_tree8_value4.cpp:46:19  |
+| m_axi_gmem_v | read      | 51200  | 32    | VITIS_LOOP_46_1   | attention_cached_tree8_value4.cpp:46:19  |
++--------------+-----------+--------+-------+-------------------+------------------------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+------------------------------------------+-----------+--------------+--------+-------------------+------------------------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location                          | Direction | Burst Status | Length | Loop              | Loop Location                            | Resolution | Problem                                                                                                 |
++--------------+----------+------------------------------------------+-----------+--------------+--------+-------------------+------------------------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_gmem_k | k        | attention_cached_tree8_value4.cpp:51:13  | read      | Widen Fail   |        | VITIS_LOOP_48_3   | attention_cached_tree8_value4.cpp:48:24  | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem_k | k        | attention_cached_tree8_value4.cpp:51:13  | read      | Inferred     | 25600  | VITIS_LOOP_46_1   | attention_cached_tree8_value4.cpp:46:19  |            |                                                                                                         |
+| m_axi_gmem_o | output   | attention_cached_tree8_value4.cpp:152:37 | write     | Widen Fail   |        | VITIS_LOOP_149_24 | attention_cached_tree8_value4.cpp:149:28 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem_o | output   | attention_cached_tree8_value4.cpp:152:37 | write     | Fail         |        | VITIS_LOOP_148_23 | attention_cached_tree8_value4.cpp:148:26 | 214-230    | Stride is incompatible                                                                                  |
+| m_axi_gmem_o | output   | attention_cached_tree8_value4.cpp:152:37 | write     | Inferred     | 16     | VITIS_LOOP_149_24 | attention_cached_tree8_value4.cpp:149:28 |            |                                                                                                         |
+| m_axi_gmem_q | q        | attention_cached_tree8_value4.cpp:70:15  | read      | Widen Fail   |        | VITIS_LOOP_67_8   | attention_cached_tree8_value4.cpp:67:26  | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem_q | q        | attention_cached_tree8_value4.cpp:70:15  | read      | Inferred     | 25600  | VITIS_LOOP_46_1   | attention_cached_tree8_value4.cpp:46:19  |            |                                                                                                         |
+| m_axi_gmem_v | v        | attention_cached_tree8_value4.cpp:58:13  | read      | Widen Fail   |        | VITIS_LOOP_55_5   | attention_cached_tree8_value4.cpp:55:24  | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem_v | v        | attention_cached_tree8_value4.cpp:58:13  | read      | Inferred     | 51200  | VITIS_LOOP_46_1   | attention_cached_tree8_value4.cpp:46:19  |            |                                                                                                         |
++--------------+----------+------------------------------------------+-----------+--------------+--------+-------------------+------------------------------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------------------------------------------+-----+--------+----------------+-----------+--------------------------+---------+
+| Name                                                                                | DSP | Pragma | Variable       | Op        | Impl                     | Latency |
++-------------------------------------------------------------------------------------+-----+--------+----------------+-----------+--------------------------+---------+
+| + psa_attention_cached_tree8_value4                                                 | 98  |        |                |           |                          |         |
+|   icmp_ln46_fu_727_p2                                                               |     |        | icmp_ln46      | seteq     | auto                     | 0       |
+|   add_ln46_fu_733_p2                                                                |     |        | add_ln46       | add       | fabric                   | 0       |
+|   sub_ln54_fu_761_p2                                                                |     |        | sub_ln54       | sub       | fabric                   | 0       |
+|   icmp_ln62_fu_767_p2                                                               |     |        | icmp_ln62      | seteq     | auto                     | 0       |
+|   add_ln62_fu_773_p2                                                                |     |        | add_ln62       | add       | fabric                   | 0       |
+|   icmp_ln64_fu_783_p2                                                               |     |        | icmp_ln64      | seteq     | auto                     | 0       |
+|   add_ln64_fu_789_p2                                                                |     |        | add_ln64       | add       | fabric                   | 0       |
+|   icmp_ln79_fu_807_p2                                                               |     |        | icmp_ln79      | setlt     | auto                     | 0       |
+|   icmp_ln119_fu_819_p2                                                              |     |        | icmp_ln119     | seteq     | auto                     | 0       |
+|   add_ln119_fu_825_p2                                                               |     |        | add_ln119      | add       | fabric                   | 0       |
+|   icmp_ln128_fu_876_p2                                                              |     |        | icmp_ln128     | setne     | auto                     | 0       |
+|   icmp_ln128_1_fu_882_p2                                                            |     |        | icmp_ln128_1   | seteq     | auto                     | 0       |
+|   fmul_32ns_32ns_32_5_max_dsp_1_U156                                                |     |        | or_ln128       | or        | auto                     | 0       |
+|   fcmp_32ns_32ns_1_2_no_dsp_1_U150                                                  |     |        | tmp_3          | fcmp      | auto                     | 1       |
+|   and_ln128_fu_892_p2                                                               |     |        | and_ln128      | and       | auto                     | 0       |
+|   fmul_32ns_32ns_32_5_max_dsp_1_U157                                                | 2   |        | x_assign       | fsub      | fulldsp                  | 7       |
+|   fexp_32ns_32ns_32_13_full_dsp_1_U151                                              | 7   |        | tmp_1          | fexp      | fulldsp                  | 12      |
+|   alpha_fu_897_p3                                                                   |     |        | alpha          | select    | auto_sel                 | 0       |
+|   fmul_32ns_32ns_32_5_max_dsp_1_U158                                                | 3   |        | mul            | fmul      | maxdsp                   | 4       |
+|   icmp_ln136_fu_907_p2                                                              |     |        | icmp_ln136     | seteq     | auto                     | 0       |
+|   add_ln136_fu_913_p2                                                               |     |        | add_ln136      | add       | fabric                   | 0       |
+|   add_ln138_fu_923_p2                                                               |     |        | add_ln138      | add       | fabric                   | 0       |
+|   add_ln137_fu_937_p2                                                               |     |        | add_ln137      | add       | fabric                   | 0       |
+|   icmp_ln137_fu_943_p2                                                              |     |        | icmp_ln137     | setgt     | auto                     | 0       |
+|   faddfsub_32ns_32ns_32_8_full_dsp_1_U148                                           | 2   |        | x_assign_1     | fsub      | fulldsp                  | 7       |
+|   fexp_32ns_32ns_32_13_full_dsp_1_U151                                              | 7   |        | weight         | fexp      | fulldsp                  | 12      |
+|   faddfsub_32ns_32ns_32_8_full_dsp_1_U148                                           | 2   |        | add5           | fsub      | fulldsp                  | 7       |
+|   add_ln80_fu_841_p2                                                                |     |        | add_ln80       | add       | fabric                   | 0       |
+|   add_ln63_fu_813_p2                                                                |     |        | add_ln63       | add       | fabric                   | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_47_2_VITIS_LOOP_48_3       | 1   |        |                |           |                          |         |
+|    icmp_ln47_fu_287_p2                                                              |     |        | icmp_ln47      | seteq     | auto                     | 0       |
+|    add_ln47_1_fu_293_p2                                                             |     |        | add_ln47_1     | add       | fabric                   | 0       |
+|    add_ln47_fu_305_p2                                                               |     |        | add_ln47       | add       | fabric                   | 0       |
+|    icmp_ln48_fu_311_p2                                                              |     |        | icmp_ln48      | seteq     | auto                     | 0       |
+|    select_ln47_fu_317_p3                                                            |     |        | select_ln47    | select    | auto_sel                 | 0       |
+|    select_ln47_1_fu_325_p3                                                          |     |        | select_ln47_1  | select    | auto_sel                 | 0       |
+|    mac_muladd_9ns_2ns_9ns_11_4_1_U1                                                 | 1   |        | mul_ln50       | mul       | dsp_slice                | 3       |
+|    mac_muladd_9ns_2ns_9ns_11_4_1_U1                                                 | 1   |        | add_ln50       | add       | dsp_slice                | 3       |
+|    add_ln48_fu_351_p2                                                               |     |        | add_ln48       | add       | fabric                   | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_54_4_VITIS_LOOP_55_5       | 1   |        |                |           |                          |         |
+|    icmp_ln54_fu_203_p2                                                              |     |        | icmp_ln54      | seteq     | auto                     | 0       |
+|    add_ln54_1_fu_209_p2                                                             |     |        | add_ln54_1     | add       | fabric                   | 0       |
+|    add_ln54_fu_221_p2                                                               |     |        | add_ln54       | add       | fabric                   | 0       |
+|    icmp_ln55_fu_227_p2                                                              |     |        | icmp_ln55      | seteq     | auto                     | 0       |
+|    select_ln54_fu_233_p3                                                            |     |        | select_ln54    | select    | auto_sel                 | 0       |
+|    select_ln54_1_fu_241_p3                                                          |     |        | select_ln54_1  | select    | auto_sel                 | 0       |
+|    mac_muladd_9ns_4ns_9ns_13_4_1_U13                                                | 1   |        | mul_ln57       | mul       | dsp_slice                | 3       |
+|    mac_muladd_9ns_4ns_9ns_13_4_1_U13                                                | 1   |        | add_ln57       | add       | dsp_slice                | 3       |
+|    add_ln55_fu_267_p2                                                               |     |        | add_ln55       | add       | fabric                   | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_67_8                       | 0   |        |                |           |                          |         |
+|    icmp_ln67_fu_229_p2                                                              |     |        | icmp_ln67      | seteq     | auto                     | 0       |
+|    add_ln67_fu_235_p2                                                               |     |        | add_ln67       | add       | fabric                   | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_73_9                       | 0   |        |                |           |                          |         |
+|    icmp_ln73_fu_126_p2                                                              |     |        | icmp_ln73      | seteq     | auto                     | 0       |
+|    add_ln73_fu_132_p2                                                               |     |        | add_ln73       | add       | fabric                   | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_81_11_VITIS_LOOP_82_12_VIT | 62  |        |                |           |                          |         |
+|    icmp_ln81_fu_675_p2                                                              |     |        | icmp_ln81      | seteq     | auto                     | 0       |
+|    add_ln81_1_fu_681_p2                                                             |     |        | add_ln81_1     | add       | fabric                   | 0       |
+|    add_ln81_fu_857_p2                                                               |     |        | add_ln81       | add       | fabric                   | 0       |
+|    icmp_ln82_fu_690_p2                                                              |     |        | icmp_ln82      | seteq     | auto                     | 0       |
+|    select_ln81_fu_810_p3                                                            |     |        | select_ln81    | select    | auto_sel                 | 0       |
+|    select_ln81_1_fu_696_p3                                                          |     |        | select_ln81_1  | select    | auto_sel                 | 0       |
+|    xor_ln93_fu_712_p2                                                               |     |        | xor_ln93       | xor       | auto                     | 0       |
+|    or_ln81_fu_718_p2                                                                |     |        | or_ln81        | or        | auto                     | 0       |
+|    select_ln81_2_fu_863_p3                                                          |     |        | select_ln81_2  | select    | auto_sel                 | 0       |
+|    add_ln82_fu_817_p2                                                               |     |        | add_ln82       | add       | fabric                   | 0       |
+|    dim_5_mid2_fu_724_p3                                                             |     |        | dim_5_mid2     | select    | auto_sel                 | 0       |
+|    select_ln82_fu_823_p3                                                            |     |        | select_ln82    | select    | auto_sel                 | 0       |
+|    add_ln116_fu_885_p2                                                              |     |        | add_ln116      | add       | fabric                   | 0       |
+|    empty_69_fu_834_p2                                                               |     |        | empty_69       | add       | fabric                   | 0       |
+|    cmp109_fu_843_p2                                                                 |     |        | cmp109         | setlt     | auto                     | 0       |
+|    mac_muladd_9ns_2ns_9ns_11_4_1_U76                                                | 1   |        | mul_ln97       | mul       | dsp_slice                | 3       |
+|    mac_muladd_9ns_2ns_9ns_11_4_1_U76                                                | 1   |        | add_ln97       | add       | dsp_slice                | 3       |
+|    fmul_32ns_32ns_32_5_max_dsp_1_U73                                                | 3   |        | mul119_5       | fmul      | maxdsp                   | 4       |
+|    fmul_32ns_32ns_32_5_max_dsp_1_U74                                                | 3   |        | mul119_6       | fmul      | maxdsp                   | 4       |
+|    fmul_32ns_32ns_32_5_max_dsp_1_U75                                                | 3   |        | mul119_7       | fmul      | maxdsp                   | 4       |
+|    product_6_fu_926_p3                                                              |     |        | product_6      | select    | auto_sel                 | 0       |
+|    product_4_fu_933_p3                                                              |     |        | product_4      | select    | auto_sel                 | 0       |
+|    product_2_fu_940_p3                                                              |     |        | product_2      | select    | auto_sel                 | 0       |
+|    product_fu_947_p3                                                                |     |        | product        | select    | auto_sel                 | 0       |
+|    product_1_fu_954_p3                                                              |     |        | product_1      | select    | auto_sel                 | 0       |
+|    product_3_fu_961_p3                                                              |     |        | product_3      | select    | auto_sel                 | 0       |
+|    product_5_fu_968_p3                                                              |     |        | product_5      | select    | auto_sel                 | 0       |
+|    product_7_fu_975_p3                                                              |     |        | product_7      | select    | auto_sel                 | 0       |
+|    icmp_ln95_fu_746_p2                                                              |     |        | icmp_ln95      | seteq     | auto                     | 0       |
+|    product_8_fu_1078_p3                                                             |     |        | product_8      | select    | auto_sel                 | 0       |
+|    icmp_ln95_1_fu_752_p2                                                            |     |        | icmp_ln95_1    | seteq     | auto                     | 0       |
+|    product_9_fu_1084_p3                                                             |     |        | product_9      | select    | auto_sel                 | 0       |
+|    icmp_ln95_2_fu_758_p2                                                            |     |        | icmp_ln95_2    | seteq     | auto                     | 0       |
+|    product_10_fu_1090_p3                                                            |     |        | product_10     | select    | auto_sel                 | 0       |
+|    or_ln95_fu_1096_p2                                                               |     |        | or_ln95        | or        | auto                     | 0       |
+|    or_ln95_1_fu_1100_p2                                                             |     |        | or_ln95_1      | or        | auto                     | 0       |
+|    product_11_fu_1105_p3                                                            |     |        | product_11     | select    | auto_sel                 | 0       |
+|    product_12_fu_1112_p3                                                            |     |        | product_12     | select    | auto_sel                 | 0       |
+|    product_13_fu_1118_p3                                                            |     |        | product_13     | select    | auto_sel                 | 0       |
+|    product_14_fu_1124_p3                                                            |     |        | product_14     | select    | auto_sel                 | 0       |
+|    product_15_fu_1130_p3                                                            |     |        | product_15     | select    | auto_sel                 | 0       |
+|    product_16_fu_1137_p3                                                            |     |        | product_16     | select    | auto_sel                 | 0       |
+|    product_17_fu_1143_p3                                                            |     |        | product_17     | select    | auto_sel                 | 0       |
+|    product_18_fu_1149_p3                                                            |     |        | product_18     | select    | auto_sel                 | 0       |
+|    product_19_fu_1155_p3                                                            |     |        | product_19     | select    | auto_sel                 | 0       |
+|    product_20_fu_1162_p3                                                            |     |        | product_20     | select    | auto_sel                 | 0       |
+|    product_21_fu_1168_p3                                                            |     |        | product_21     | select    | auto_sel                 | 0       |
+|    product_22_fu_1174_p3                                                            |     |        | product_22     | select    | auto_sel                 | 0       |
+|    product_23_fu_1180_p3                                                            |     |        | product_23     | select    | auto_sel                 | 0       |
+|    product_24_fu_1187_p3                                                            |     |        | product_24     | select    | auto_sel                 | 0       |
+|    product_25_fu_1194_p3                                                            |     |        | product_25     | select    | auto_sel                 | 0       |
+|    product_26_fu_1200_p3                                                            |     |        | product_26     | select    | auto_sel                 | 0       |
+|    product_27_fu_1206_p3                                                            |     |        | product_27     | select    | auto_sel                 | 0       |
+|    product_28_fu_1212_p3                                                            |     |        | product_28     | select    | auto_sel                 | 0       |
+|    product_29_fu_1219_p3                                                            |     |        | product_29     | select    | auto_sel                 | 0       |
+|    product_30_fu_1225_p3                                                            |     |        | product_30     | select    | auto_sel                 | 0       |
+|    product_31_fu_1231_p3                                                            |     |        | product_31     | select    | auto_sel                 | 0       |
+|    product_32_fu_1237_p3                                                            |     |        | product_32     | select    | auto_sel                 | 0       |
+|    product_33_fu_1244_p3                                                            |     |        | product_33     | select    | auto_sel                 | 0       |
+|    product_34_fu_1250_p3                                                            |     |        | product_34     | select    | auto_sel                 | 0       |
+|    product_35_fu_1256_p3                                                            |     |        | product_35     | select    | auto_sel                 | 0       |
+|    product_36_fu_1262_p3                                                            |     |        | product_36     | select    | auto_sel                 | 0       |
+|    product_37_fu_1269_p3                                                            |     |        | product_37     | select    | auto_sel                 | 0       |
+|    product_38_fu_1275_p3                                                            |     |        | product_38     | select    | auto_sel                 | 0       |
+|    product_39_fu_1281_p3                                                            |     |        | product_39     | select    | auto_sel                 | 0       |
+|    add_ln93_fu_764_p2                                                               |     |        | add_ln93       | add       | fabric                   | 0       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U42                                               | 2   |        | add134_5       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U43                                               | 2   |        | add134_6       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U44                                               | 2   |        | add134_7       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U45                                               | 2   |        | add134_8       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U46                                               | 2   |        | add134_9       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U47                                               | 2   |        | add134_s       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U48                                               | 2   |        | add134_10      | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U49                                               | 2   |        | add134_11      | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U50                                               | 2   |        | add134_12      | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U51                                               | 2   |        | add134_13      | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U52                                               | 2   |        | add134_14      | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U53                                               | 2   |        | add1           | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U54                                               | 2   |        | add150_1       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U55                                               | 2   |        | add150_2       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U56                                               | 2   |        | add150_3       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U57                                               | 2   |        | add150_4       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U58                                               | 2   |        | add150_5       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U59                                               | 2   |        | add150_6       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U60                                               | 2   |        | add150_7       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U61                                               | 2   |        | add2           | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U62                                               | 2   |        | add166_1       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U63                                               | 2   |        | add166_2       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U64                                               | 2   |        | add166_3       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U65                                               | 2   |        | add3           | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U66                                               | 2   |        | add182_1       | fadd      | fulldsp                  | 7       |
+|    fadd_32ns_32ns_32_8_full_dsp_1_U67                                               | 2   |        | add4           | fadd      | fulldsp                  | 7       |
+|    add_ln82_1_fu_778_p2                                                             |     |        | add_ln82_1     | add       | fabric                   | 0       |
+|    select_ln82_1_fu_784_p3                                                          |     |        | select_ln82_1  | select    | auto_sel                 | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_148_23_VITIS_LOOP_149_24   | 1   |        |                |           |                          |         |
+|    icmp_ln148_fu_257_p2                                                             |     |        | icmp_ln148     | seteq     | auto                     | 0       |
+|    add_ln148_4_fu_263_p2                                                            |     |        | add_ln148_4    | add       | fabric                   | 0       |
+|    add_ln148_2_fu_275_p2                                                            |     |        | add_ln148_2    | add       | fabric                   | 0       |
+|    icmp_ln149_fu_281_p2                                                             |     |        | icmp_ln149     | seteq     | auto                     | 0       |
+|    select_ln148_fu_287_p3                                                           |     |        | select_ln148   | select    | auto_sel                 | 0       |
+|    select_ln148_1_fu_299_p3                                                         |     |        | select_ln148_1 | select    | auto_sel                 | 0       |
+|    first_iter_4_fu_307_p2                                                           |     |        | first_iter_4   | seteq     | auto                     | 0       |
+|    mac_muladd_9ns_7ns_15ns_16_4_1_U135                                              | 1   |        | mul_ln148      | mul       | dsp_slice                | 3       |
+|    mac_muladd_9ns_7ns_15ns_16_4_1_U135                                              | 1   |        | add_ln148_3    | add       | dsp_slice                | 3       |
+|    add_ln148_fu_401_p2                                                              |     |        | add_ln148      | add       | fabric                   | 0       |
+|    add_ln148_1_fu_417_p2                                                            |     |        | add_ln148_1    | add       | fabric                   | 0       |
+|    sparsemux_9_2_32_1_1_U134                                                        |     |        | tmp            | sparsemux | compactencoding_dontcare | 0       |
+|    fdiv_32ns_32ns_32_16_no_dsp_1_U133                                               |     |        | div            | fdiv      | fabric                   | 15      |
+|    add_ln149_fu_344_p2                                                              |     |        | add_ln149      | add       | fabric                   | 0       |
+|    icmp_ln149_1_fu_350_p2                                                           |     |        | icmp_ln149_1   | seteq     | auto                     | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_121_19                     | 0   |        |                |           |                          |         |
+|    icmp_ln121_fu_118_p2                                                             |     |        | icmp_ln121     | seteq     | auto                     | 0       |
+|    add_ln121_fu_124_p2                                                              |     |        | add_ln121      | add       | fabric                   | 0       |
+|    add_ln124_fu_134_p2                                                              |     |        | add_ln124      | add       | fabric                   | 0       |
+|    add_ln123_fu_149_p2                                                              |     |        | add_ln123      | add       | fabric                   | 0       |
+|    icmp_ln123_fu_155_p2                                                             |     |        | icmp_ln123     | setlt     | auto                     | 0       |
+|    icmp_ln124_fu_204_p2                                                             |     |        | icmp_ln124     | setne     | auto                     | 0       |
+|    icmp_ln124_1_fu_210_p2                                                           |     |        | icmp_ln124_1   | seteq     | auto                     | 0       |
+|    or_ln124_fu_216_p2                                                               |     |        | or_ln124       | or        | auto                     | 0       |
+|    icmp_ln124_2_fu_222_p2                                                           |     |        | icmp_ln124_2   | setne     | auto                     | 0       |
+|    icmp_ln124_3_fu_228_p2                                                           |     |        | icmp_ln124_3   | seteq     | auto                     | 0       |
+|    or_ln124_1_fu_234_p2                                                             |     |        | or_ln124_1     | or        | auto                     | 0       |
+|    and_ln124_fu_240_p2                                                              |     |        | and_ln124      | and       | auto                     | 0       |
+|    and_ln124_1_fu_246_p2                                                            |     |        | and_ln124_1    | and       | auto                     | 0       |
+|    and_ln124_2_fu_251_p2                                                            |     |        | and_ln124_2    | and       | auto                     | 0       |
+|    next_max_1_fu_257_p3                                                             |     |        | next_max_1     | select    | auto_sel                 | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_132_20                     | 0   |        |                |           |                          |         |
+|    add_ln132_fu_194_p2                                                              |     |        | add_ln132      | add       | fabric                   | 0       |
+|  + psa_attention_cached_tree8_value4_Pipeline_VITIS_LOOP_140_22                     | 1   |        |                |           |                          |         |
+|    mac_muladd_9ns_4ns_9ns_13_4_1_U121                                               | 1   |        | mul_ln142      | mul       | dsp_slice                | 3       |
+|    mac_muladd_9ns_4ns_9ns_13_4_1_U121                                               | 1   |        | add_ln142      | add       | dsp_slice                | 3       |
+|    add_ln140_fu_282_p2                                                              |     |        | add_ln140      | add       | fabric                   | 0       |
++-------------------------------------------------------------------------------------+-----+--------+----------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++---------------------------------------+--------------+-----------+------+------+--------+---------------+------+---------+------------------+
+| Name                                  | Usage        | Type      | BRAM | URAM | Pragma | Variable      | Impl | Latency | Bitwidth, Depth, |
+|                                       |              |           |      |      |        |               |      |         | Banks            |
++---------------------------------------+--------------+-----------+------+------+--------+---------------+------+---------+------------------+
+| + psa_attention_cached_tree8_value4   |              |           | 26   | 16   |        |               |      |         |                  |
+|   control_s_axi_U                     | interface    | s_axilite |      |      |        |               |      |         |                  |
+|   gmem_k_m_axi_U                      | interface    | m_axi     | 2    |      |        |               |      |         |                  |
+|   gmem_o_m_axi_U                      | interface    | m_axi     | 2    |      |        |               |      |         |                  |
+|   gmem_q_m_axi_U                      | interface    | m_axi     | 2    |      |        |               |      |         |                  |
+|   gmem_v_m_axi_U                      | interface    | m_axi     | 2    |      |        |               |      |         |                  |
+|   k_cache_U                           | ram_2p array |           |      | 1    | yes    | k_cache       | uram | 1       | 32, 1600, 1      |
+|   fmul_32ns_32ns_32_5_max_dsp_1_U159  | ram_2p array |           |      | 1    | yes    | k_cache_1     | uram | 1       | 32, 1600, 1      |
+|   k_cache_2_U                         | ram_2p array |           |      | 1    | yes    | k_cache_2     | uram | 1       | 32, 1600, 1      |
+|   k_cache_3_U                         | ram_2p array |           |      | 1    | yes    | k_cache_3     | uram | 1       | 32, 1600, 1      |
+|   k_cache_4_U                         | ram_2p array |           |      | 1    | yes    | k_cache_4     | uram | 1       | 32, 1600, 1      |
+|   k_cache_5_U                         | ram_2p array |           |      | 1    | yes    | k_cache_5     | uram | 1       | 32, 1600, 1      |
+|   k_cache_6_U                         | ram_2p array |           |      | 1    | yes    | k_cache_6     | uram | 1       | 32, 1600, 1      |
+|   k_cache_7_U                         | ram_2p array |           |      | 1    | yes    | k_cache_7     | uram | 1       | 32, 1600, 1      |
+|   v_cache_U                           | ram_2p array |           |      | 2    | yes    | v_cache       | uram | 1       | 32, 6400, 1      |
+|   v_cache_1_U                         | ram_2p array |           |      | 2    | yes    | v_cache_1     | uram | 1       | 32, 6400, 1      |
+|   v_cache_2_U                         | ram_2p array |           |      | 2    | yes    | v_cache_2     | uram | 1       | 32, 6400, 1      |
+|   fcmp_32ns_32ns_1_2_no_dsp_1_U150    | ram_2p array |           |      | 2    | yes    | v_cache_3     | uram | 1       | 32, 6400, 1      |
+|   q_tile_U                            | ram_1p array |           | 2    |      |        | q_tile        | auto | 1       | 32, 64, 1        |
+|   q_tile_1_U                          | ram_1p array |           | 2    |      |        | q_tile_1      | auto | 1       | 32, 64, 1        |
+|   fmul_32ns_32ns_32_5_max_dsp_1_U156  | ram_1p array |           | 2    |      |        | q_tile_2      | auto | 1       | 32, 64, 1        |
+|   q_tile_3_U                          | ram_1p array |           | 2    |      |        | q_tile_3      | auto | 1       | 32, 64, 1        |
+|   fadd_32ns_32ns_32_8_full_dsp_1_U152 | ram_1p array |           | 2    |      |        | q_tile_4      | auto | 1       | 32, 64, 1        |
+|   q_tile_5_U                          | ram_1p array |           | 2    |      |        | q_tile_5      | auto | 1       | 32, 64, 1        |
+|   fmul_32ns_32ns_32_5_max_dsp_1_U157  | ram_1p array |           | 2    |      |        | q_tile_6      | auto | 1       | 32, 64, 1        |
+|   q_tile_7_U                          | ram_1p array |           | 2    |      |        | q_tile_7      | auto | 1       | 32, 64, 1        |
+|   fmul_32ns_32ns_32_5_max_dsp_1_U158  | ram_1p array |           | 2    |      |        | scores        | auto | 1       | 32, 1024, 1      |
+|   max_score_U                         | ram_1p array |           |      |      |        | max_score     | auto | 1       | 32, 16, 1        |
+|   fmul_32ns_32ns_32_5_max_dsp_1_U159  | ram_1p array |           |      |      |        | normalizer    | auto | 1       | 32, 16, 1        |
+|   accumulator_U                       | ram_2p array |           | 2    |      |        | accumulator   | auto | 1       | 32, 256, 1       |
+|   fadd_32ns_32ns_32_8_full_dsp_1_U153 | ram_2p array |           | 2    |      |        | accumulator_1 | auto | 1       | 32, 256, 1       |
+|   accumulator_2_U                     | ram_2p array |           | 2    |      |        | accumulator_2 | auto | 1       | 32, 256, 1       |
+|   fadd_32ns_32ns_32_8_full_dsp_1_U154 | ram_2p array |           | 2    |      |        | accumulator_3 | auto | 1       | 32, 256, 1       |
++---------------------------------------+--------------+-----------+------+------+--------+---------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Type            | Options                                                                                 | Location                                                                               |
++-----------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| interface       | mode=m_axi port=q offset=slave bundle=gmem_q depth=25600 max_read_burst_length=32       | attention_cached_tree8_value4.cpp:20 in psa_attention_cached_tree8_value4, q           |
+| interface       | mode=m_axi port=k offset=slave bundle=gmem_k depth=25600 max_read_burst_length=64       | attention_cached_tree8_value4.cpp:21 in psa_attention_cached_tree8_value4, k           |
+| interface       | mode=m_axi port=v offset=slave bundle=gmem_v depth=51200 max_read_burst_length=64       | attention_cached_tree8_value4.cpp:22 in psa_attention_cached_tree8_value4, v           |
+| interface       | mode=m_axi port=output offset=slave bundle=gmem_o depth=51200 max_write_burst_length=16 | attention_cached_tree8_value4.cpp:23 in psa_attention_cached_tree8_value4, output      |
+| interface       | mode=s_axilite port=q bundle=control                                                    | attention_cached_tree8_value4.cpp:24 in psa_attention_cached_tree8_value4, q           |
+| interface       | mode=s_axilite port=k bundle=control                                                    | attention_cached_tree8_value4.cpp:25 in psa_attention_cached_tree8_value4, k           |
+| interface       | mode=s_axilite port=v bundle=control                                                    | attention_cached_tree8_value4.cpp:26 in psa_attention_cached_tree8_value4, v           |
+| interface       | mode=s_axilite port=output bundle=control                                               | attention_cached_tree8_value4.cpp:27 in psa_attention_cached_tree8_value4, output      |
+| interface       | mode=s_axilite port=return bundle=control                                               | attention_cached_tree8_value4.cpp:28 in psa_attention_cached_tree8_value4, return      |
+| array_partition | variable=k_cache cyclic factor=8 dim=1                                                  | attention_cached_tree8_value4.cpp:34 in psa_attention_cached_tree8_value4, k_cache     |
+| array_partition | variable=v_cache cyclic factor=4 dim=1                                                  | attention_cached_tree8_value4.cpp:35 in psa_attention_cached_tree8_value4, v_cache     |
+| bind_storage    | variable=k_cache type=ram_2p impl=uram                                                  | attention_cached_tree8_value4.cpp:36 in psa_attention_cached_tree8_value4, k_cache     |
+| bind_storage    | variable=v_cache type=ram_2p impl=uram                                                  | attention_cached_tree8_value4.cpp:37 in psa_attention_cached_tree8_value4, v_cache     |
+| array_partition | variable=q_tile cyclic factor=8 dim=2                                                   | attention_cached_tree8_value4.cpp:39 in psa_attention_cached_tree8_value4, q_tile      |
+| array_partition | variable=accumulator cyclic factor=4 dim=2                                              | attention_cached_tree8_value4.cpp:44 in psa_attention_cached_tree8_value4, accumulator |
+| pipeline        | II=1                                                                                    | attention_cached_tree8_value4.cpp:49 in psa_attention_cached_tree8_value4              |
+| pipeline        | II=1                                                                                    | attention_cached_tree8_value4.cpp:56 in psa_attention_cached_tree8_value4              |
+| pipeline        | II=1                                                                                    | attention_cached_tree8_value4.cpp:68 in psa_attention_cached_tree8_value4              |
+| pipeline        | II=1                                                                                    | attention_cached_tree8_value4.cpp:74 in psa_attention_cached_tree8_value4              |
+| array_partition | variable=product complete                                                               | attention_cached_tree8_value4.cpp:88 in psa_attention_cached_tree8_value4, product     |
+| array_partition | variable=reduce16 complete                                                              | attention_cached_tree8_value4.cpp:89 in psa_attention_cached_tree8_value4, reduce16    |
+| array_partition | variable=reduce8 complete                                                               | attention_cached_tree8_value4.cpp:90 in psa_attention_cached_tree8_value4, reduce8     |
+| array_partition | variable=reduce4 complete                                                               | attention_cached_tree8_value4.cpp:91 in psa_attention_cached_tree8_value4, reduce4     |
+| array_partition | variable=reduce2 complete                                                               | attention_cached_tree8_value4.cpp:92 in psa_attention_cached_tree8_value4, reduce2     |
+| unroll          | factor=8                                                                                | attention_cached_tree8_value4.cpp:94 in psa_attention_cached_tree8_value4              |
+| unroll          |                                                                                         | attention_cached_tree8_value4.cpp:101 in psa_attention_cached_tree8_value4             |
+| unroll          |                                                                                         | attention_cached_tree8_value4.cpp:105 in psa_attention_cached_tree8_value4             |
+| unroll          |                                                                                         | attention_cached_tree8_value4.cpp:109 in psa_attention_cached_tree8_value4             |
+| unroll          |                                                                                         | attention_cached_tree8_value4.cpp:113 in psa_attention_cached_tree8_value4             |
+| pipeline        | II=1                                                                                    | attention_cached_tree8_value4.cpp:122 in psa_attention_cached_tree8_value4             |
+| unroll          | factor=4                                                                                | attention_cached_tree8_value4.cpp:133 in psa_attention_cached_tree8_value4             |
+| unroll          | factor=4                                                                                | attention_cached_tree8_value4.cpp:141 in psa_attention_cached_tree8_value4             |
+| pipeline        | II=1                                                                                    | attention_cached_tree8_value4.cpp:150 in psa_attention_cached_tree8_value4             |
++-----------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+
