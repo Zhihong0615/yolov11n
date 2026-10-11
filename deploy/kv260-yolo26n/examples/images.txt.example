@@ -1,0 +1,3 @@
+# One decoded image path per line. The runner loads this pool before timing.
+/home/ubuntu/road_demo/images/0001.jpg
+/home/ubuntu/road_demo/images/0002.jpg

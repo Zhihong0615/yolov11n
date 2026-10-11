@@ -1,6 +1,10 @@
 
 # YOLOv11n 从训练到加速推理
 
+## KV260 / Vitis AI 板端部署示例
+
+本仓库另附一个独立的 KV260 DPU 推理源码示例，包含 C++ 预处理、VART 调度、INT8 输出解码、板端编译、单图可视化和持续测试说明：[`deploy/kv260-yolo26n/README_zh.md`](deploy/kv260-yolo26n/README_zh.md)。该示例运行的是 **YOLO26n 衍生 ReLU-flow 模型**，不能直接运行仓库中的 `models/yolo11n.pt`，也不改变本仓库原有 YOLOv11n CUDA/TensorRT 流程。
+
 ## 下载资源
 
 由于 GitHub 对上传文件大小有限制（最大 25MB），我们已将完整数据集与 PDF 文档上传至第三方网盘：
