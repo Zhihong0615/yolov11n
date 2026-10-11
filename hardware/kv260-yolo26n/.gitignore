@@ -1,0 +1,5 @@
+hls/**/build*/
+hls/**/test_native
+hls/**/synth.log
+hls/**/cosim.log
+hls/**/vitis_hls.log

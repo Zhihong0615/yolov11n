@@ -1,3 +1,14 @@
+# 基于 FPGA 和深度学习技术的障碍检测系统
+
+**KV260 边缘端道路障碍检测｜YOLO26n 衍生模型｜Vitis AI / DPU B4096**
+
+历史板端长测记录：640×640、batch=1 下全路径 **91.59 FPS**，mAP50–95 **35.51%**。该结果对应 YOLO26n 衍生 ReLU-flow INT8 模型，不是本仓库默认的 YOLOv11n 权重；当前没有连接板卡，本次提交没有重新板测。
+
+- **运行手册与训练/量化/推理源码：** [KV260 YOLO26n 部署指南](deploy/kv260-yolo26n/README_zh.md)
+- **硬件文件与复现说明：** [DPU overlay、AXI/时钟配置与 HLS 源码](hardware/kv260-yolo26n/README_zh.md)
+- **范围说明：** 91.59 FPS 由单个 DPU B4096 overlay 获得；随仓库提供的 HLS 卷积和注意力是独立原型，没有集成到该性能测试的 bitstream。
+
+---
 
 # YOLOv11n 从训练到加速推理
 

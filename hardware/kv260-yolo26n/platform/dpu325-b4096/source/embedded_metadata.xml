@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dpu_325_650_not_implemented">
+  <platform vendor="xilinx" boardid="kv260_ispMipiRx_vcu_DP" name="kv260_ispMipiRx_vcu_DP" featureRomTime="0">
+    <version major="1" minor="0"/>
+    <description/>
+    <board name="xilinx.com:kv260_som:1.4" vendor="xilinx.com" fpga="xck26-sfvc784-2LV-c">
+      <interfaces/>
+      <images>
+        <image name="kv260_board.png" type="HDPI"/>
+        <image name="" type="MDPI"/>
+        <image name="" type="LDPI"/>
+      </images>
+      <id>
+        <vendor/>
+        <device/>
+        <subsystem/>
+      </id>
+    </board>
+    <build_flow/>
+    <host architecture="unknown"/>
+    <device name="fpga0" fpgaDevice="zynquplus:xck26:sfvc784:-2LV:c" addrWidth="0">
+      <core name="OCL_REGION_0" target="bitstream" type="clc_region" clockFreq="0MHz" numComputeUnits="60">
+        <kernelClocks>
+          <clock port="KERNEL_CLK" frequency="650.000000MHz"/>
+          <clock port="DATA_CLK" frequency="325.000000MHz"/>
+        </kernelClocks>
+        <kernel name="DPUCZDX8G" language="ip" vlnv="xilinx.com:RTLKernel:DPUCZDX8G:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false">
+          <port name="S_AXI_CONTROL" mode="slave" range="0x00004000" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="M_AXI_GP0" mode="master" range="0xFFFFFFFF" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="M_AXI_HP0" mode="master" range="0xFFFFFFFF" dataWidth="128" portType="addressable" base="0x0"/>
+          <port name="M_AXI_HP2" mode="master" range="0xFFFFFFFF" dataWidth="128" portType="addressable" base="0x0"/>
+          <arg name="dpu_doneclr" addressQualifier="0" id="0" port="S_AXI_CONTROL" size="0x4" offset="0x40" hostOffset="0x0" hostSize="0x4" type="int*"/>
+          <arg name="dpu_prof_en" addressQualifier="0" id="1" port="S_AXI_CONTROL" size="0x4" offset="0x44" hostOffset="0x0" hostSize="0x4" type="int*"/>
+          <arg name="dpu_cmd" addressQualifier="0" id="2" port="S_AXI_CONTROL" size="0x4" offset="0x48" hostOffset="0x0" hostSize="0x4" type="int*"/>
+          <arg name="dpu_instr_addr" addressQualifier="1" id="3" port="M_AXI_GP0" size="0x8" offset="0x50" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_prof_addr" addressQualifier="1" id="4" port="M_AXI_GP0" size="0x8" offset="0x58" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_base0_addr" addressQualifier="1" id="5" port="M_AXI_HP0" size="0x8" offset="0x60" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_base1_addr" addressQualifier="1" id="6" port="M_AXI_HP0" size="0x8" offset="0x68" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_base2_addr" addressQualifier="1" id="7" port="M_AXI_HP0" size="0x8" offset="0x70" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_base3_addr" addressQualifier="1" id="8" port="M_AXI_HP0" size="0x8" offset="0x78" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_base4_addr" addressQualifier="1" id="9" port="M_AXI_HP2" size="0x8" offset="0x80" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_base5_addr" addressQualifier="1" id="10" port="M_AXI_HP2" size="0x8" offset="0x88" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_base6_addr" addressQualifier="1" id="11" port="M_AXI_HP2" size="0x8" offset="0x90" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="dpu_base7_addr" addressQualifier="1" id="12" port="M_AXI_HP2" size="0x8" offset="0x98" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <maxWorkGroupSize x="0" y="0" z="0"/>
+          <string_table/>
+          <instance name="DPUCZDX8G_1">
+            <addrRemap base="0x00A0010000" range="0x1000" port="S_AXI_CONTROL"/>
+          </instance>
+        </kernel>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="axi_ic_accel_ctrl_M01_AXI" dstType="kernel" dstInst="DPUCZDX8G_1" dstPort="S_AXI_CONTROL"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="PS_0_S_AXI_HPC1_FPD" dstType="kernel" dstInst="DPUCZDX8G_1" dstPort="M_AXI_GP0"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="PS_0_S_AXI_HP1_FPD" dstType="kernel" dstInst="DPUCZDX8G_1" dstPort="M_AXI_HP0"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="PS_0_S_AXI_HP3_FPD" dstType="kernel" dstInst="DPUCZDX8G_1" dstPort="M_AXI_HP2"/>
+      </core>
+    </device>
+  </platform>
+</project>

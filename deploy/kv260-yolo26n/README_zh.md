@@ -2,6 +2,8 @@
 
 本目录整理了曾在 KV260 上运行的完整 C++ 推理路径：ARM 端 BGR 预处理、VART 调度、DPU 执行、INT8 检测头解码和结果可视化，并提供板端编译、单图启动和长测脚本。
 
+硬件 overlay、DPU AXI/时钟配置、HLS 原型源码及其验证边界见[硬件复现指南](../../hardware/kv260-yolo26n/README_zh.md)。HLS 原型没有集成到本指南所述的 DPU-only 性能测试 bitstream。
+
 ## 兼容性、模型文件与当前验证状态
 
 本目录虽放在 `yolov11n` 仓库中，但它运行的是 **YOLO26n 衍生 ReLU-flow 六类模型**，不是 `models/yolo11n.pt`，也不是 YOLOv11n TensorRT 模型。runner 要求输入 `[1,640,640,3]` INT8，以及 P3/P4/P5 六个输出张量（每尺度 4 个框通道、6 个分类通道）。YOLOv11n、YOLOv8n、YOLOv3 或其他 xmodel 均不能直接使用。
