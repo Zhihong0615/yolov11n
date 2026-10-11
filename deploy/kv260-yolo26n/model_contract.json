@@ -1,0 +1,37 @@
+{
+  "identity": "yolo26n-derived-relu-flow-ptq512-int8-kv260",
+  "not_stock_yolov11n": true,
+  "artifact_included_in_repository": false,
+  "compiled_xmodel_sha256": "bfad5fae350721d10c7723c6a08f26dc59a43504eddb4cdddfd335ec38666c77",
+  "board": "Xilinx Kria KV260 revB",
+  "accelerator": "DPUCZDX8G ISA1 B4096, one physical compute unit",
+  "input": {
+    "shape_nhwc": [1, 640, 640, 3],
+    "dtype": "int8",
+    "fix_point": 6,
+    "source": "decoded uint8 BGR frame; letterbox to 640x640, RGB conversion, scale by 1/255, quantize round(x*64)"
+  },
+  "outputs": [
+    {"scale": "P3", "shape": [1, 80, 80, 4], "role": "ltrb box distances", "dtype": "int8", "fix_point": 4},
+    {"scale": "P3", "shape": [1, 80, 80, 6], "role": "class logits with ReLU(logit+8) transform", "dtype": "int8", "fix_point": 3},
+    {"scale": "P4", "shape": [1, 40, 40, 4], "role": "ltrb box distances", "dtype": "int8", "fix_point": 4},
+    {"scale": "P4", "shape": [1, 40, 40, 6], "role": "class logits with ReLU(logit+8) transform", "dtype": "int8", "fix_point": 3},
+    {"scale": "P5", "shape": [1, 20, 20, 4], "role": "ltrb box distances", "dtype": "int8", "fix_point": 4},
+    {"scale": "P5", "shape": [1, 20, 20, 6], "role": "class logits with ReLU(logit+8) transform", "dtype": "int8", "fix_point": 3}
+  ],
+  "class_order": ["Car", "Cyclist", "Pedestrian", "Tram", "Tricycle", "Truck"],
+  "postprocessing": {
+    "topk_anchors": 300,
+    "topk_anchor_class_pairs": 300,
+    "confidence_floor": 0.25,
+    "nms": false,
+    "maximum_detections": 300
+  },
+  "tested_runtime": {
+    "ubuntu": "22.04.4 aarch64",
+    "gcc": "11.4.0",
+    "opencv": "4.5.4",
+    "vart": "2.5.0",
+    "xir_abi": 2
+  }
+}
